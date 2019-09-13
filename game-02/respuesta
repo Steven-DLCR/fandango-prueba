@@ -1,0 +1,18 @@
+Como ya se tiene elaborado el proyecto de YOLO, lo ideal seria 
+crear un nuevo proyecto que por medio de CURL realice PING al servicio de 
+WTF, en este nuevo proyecto se darán dos escenarios:
+
+1. Respuesta Ok del servicio de WTF
+2. Respuesta Error del servicio de WTF
+
+Lo ideal es manejar la comunicacion entre YOLO y WTF a travez de un 
+interruptor, este valor estaría guardado en Redis y sería añadido como 
+lógica en el proyecto de YOLO. Esto quiere decir, si el interruptor está 
+en ON, entonces que se consuma el servicio de WTF, caso contrario que no 
+se consuma el servicio de WTF.
+
+Por último en el escenario que no se consuma el servicio de WTF, lo ideal 
+es guardar las tramas que se enviarán al servicio en mención, esto para
+poder re-inyectarlos al flujo.
+
+Esas tramas pueden ser guardadas en DB o incluso se podria encolarlo(Queue).
